@@ -1,7 +1,7 @@
 <?php
 require_once('logics/dbconnection.php');
 //count all enrolled students
-$queryAllStudents=mysqli_query($conn, "SELECT * FROM enrollment");
+$queryAllStudents=mysqli_query($conn, "SELECT * FROM 'enrollment'");
 $countAllStudents = mysqli_num_rows($queryAllStudents);
 
 //count by gender
