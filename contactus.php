@@ -1,4 +1,4 @@
-<?php
+ <?php
 require_once('logics/dbconnection.php');
 $sqlQuery=mysqli_Query($conn, "SELECT * FROM contactus");
 ?>
