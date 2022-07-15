@@ -1,7 +1,7 @@
 <?php
 $message ="";
 require_once('logics/dbconnection.php');
-$queryUser=mysqli_query($conn, "SELECT * FROM enrollment WHERE no='".$_GET['id']."' ");
+$queryUser = mysqli_query($conn, "SELECT * FROM enrollment WHERE no='".$_GET['id']. "' ");
 
 
 while($fetchUser = mysqli_fetch_array($queryUser))
@@ -22,12 +22,12 @@ if(isset($_POST['updateRecords']))
     $name= $_POST['fullname'];
     $phone= $_POST['phonenumber'];
     $email= $_POST['email'];
-    $formgender= $_POST['gender'];
-    $selectcourse= $_POST['course'];
+    $gender= $_POST['gender'];
+    $course= $_POST['course'];
 
     //updating records
     $updateQuery=mysqli_query($conn,
-    "UPDATE enrollment SET  fullname='$name', phonenumber='$phone', gender='$formgender', course='$selectcourse'
+    "UPDATE enrollment SET  fullname='$name', phonenumber='$phone', gender='$gender', course='$course'
     WHERE no='".$_GET['id']."' ");
 if($updateQuery)
 {
@@ -68,20 +68,20 @@ else
                                 <div class="row">
                                  <div class="mb-3 col-lg-12 col-md-12 col-sm-12 ">
                                       <label for="fullname" class="form-lebel">Full Name:</label>
-                                      <input type="text" class="form-control" value="<?php  echo $fullname ?>" name="fullname" placeholder="Enter Your Full Name">
+                                      <input="text" class="form-control" name="fullname" value="<?php  echo$fullname ?>"placeholder="Enter Your Full Name">
                                  </div>
                                  <div class="mb-3 col-lg-12 col-md-12 col-sm-12 ">
                                       <label for="phonenumber" class="form-lebel">Phone Number:</label>
-                                      <input type="tel" class="form-control" value="<?php  echo $phonenumber ?>" name="phonenumber" placeholder="+2547...">
+                                      <input="tel" class="form-control" name="phonenumber" value="<?php  echo$phonenumber ?>"placeholder="+2547...">
                                  </div>
                                  <div class="mb-3 col-lg-12 col-md-12 col-sm-12 ">
                                       <label for="email" class="form-lebel">Email Address:</label>
-                                      <input type="email" class="form-control" value="<?php  echo $email ?>" name="email" placeholder="Please enter your email">
+                                      <input="email" class="form-control" name="email" value="<?php  echo$email ?>"placeholder="Please enter your email">
                                  </div>
                                  <div class="mb-3 col-lg-12 col-md-12 col-sm-12 ">
                                       <label for="gender" class="form-lebel">What's your gender:</label>
                                       <select name="gender" class="form-select" aria-label="default select example">
-                                         <option ><?php  echo $gender ?></option>
+                                         <option ><?php  echo$gender?></option>
                                          <option value="Male">Male</option>
                                          <option value="Female">Female</option>
                                       </select>

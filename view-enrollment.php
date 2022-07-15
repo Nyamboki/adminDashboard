@@ -1,13 +1,17 @@
 <?php
-//database connection
+$message ="";
 require_once('logics/dbconnection.php');
-$sqlFetchStudent = mysqli_query($conn,
-"SELECT * FROM enrollment WHERE no='".$_GET['id']."'");
-while($fetchStudentRecords = mysql_fetch_array($sqlFetchStudent))
+$queryUser=mysqli_query($conn, "SELECT * FROM enrollment WHERE no='".$_GET['id']."' ");
+
+
+while($sqlFetchStudentrecords=mysqli_fetch_array($sqlFetchStudent))
 {
-    $fullname = $fetchStudentsRecords['fullname'];
-    $phone = $fetchStudentsRecords['phonenumber'];
-    $email = $fetchStudentsRecords['email'];
+    $fullname =$sqlFetchStudentrecords['fullname'];
+    $phone =$sqlFetchStudentrecords['phonenumber'];
+    $email =$sqlFetchStudentrecords['email'];
+    $gender =$sqlFetchStudentrecords['gender'];
+    $course =$sqlFetchStudentrecords['course'];
+    $createdat =$sqlFetchStudentrecords['createdat'];
 }
 ?>
 <!DOCTYPE html>
